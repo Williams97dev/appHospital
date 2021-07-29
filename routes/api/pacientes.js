@@ -1,8 +1,16 @@
+const { json } = require('express');
 const express = require('express');
+const { getAll } = require('../../models/paciente.model');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-	res.send('get api pacientes');
+router.get('/', async (req, res) => {
+	try{
+		const pacientes = await getAll();
+		res.json(pacientes);
+
+	}catch(error){
+		res.json({error: error.message});
+	}
 });
 
 router.post('/', (req, res) => {
