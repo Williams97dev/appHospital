@@ -7,12 +7,11 @@ const logger = require('morgan');
 require('dotenv').config();
 require('./dbConfig');
 
-
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiRouter = require('./routes/api');
 const pacientesRouter = require('./routes/pacientes');
-
+const medicosRouter = require('./routes/medicos');
 
 const app = express();
 
@@ -30,8 +29,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/pacientes', pacientesRouter);
 app.use('/api', apiRouter);
-app.use('/pacientes', pacientesRouter);
 
+app.use('/pacientes', pacientesRouter);
+app.use('/medicos', medicosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
