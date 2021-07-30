@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/pacientes/1
+PUT http://localhost:3000/api/pacientes/5
 
 ###
 DELETE http://localhost:3000/api/pacientes/idPaciente
@@ -31,9 +31,20 @@ GET http://localhost:3000/api/medicos
 
 ###
 POST http://localhost:3000/api/medicos
+Content-Type: application/json
+
+{
+    "nombre": "Agustin",
+    "apellidos": "Rivera",
+    "especialidad": "Cardiologia",
+    "telefono": "55667788"
+}
+
 
 ###
-PUT http://localhost:3000/api/medicos/1
+PUT http://localhost:3000/api/medicos/11
+
+
 
 ###
 DELETE http://localhost:3000/api/medicos/1

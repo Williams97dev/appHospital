@@ -1,8 +1,8 @@
 const { executeQuery } = require("../helpers")
 
-const getAll = ()=>{
+const getAll = () => {
     return executeQuery(
-        'SELECT * FROM pacientes'   
+        'SELECT * FROM pacientes'
     );
 };
 
