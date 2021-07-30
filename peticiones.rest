@@ -53,4 +53,4 @@ PUT http://localhost:3000/api/medicos/11
 
 
 ###
-DELETE http://localhost:3000/api/medicos/55
+DELETE http://localhost:3000/api/medicos/65
