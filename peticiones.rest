@@ -23,8 +23,16 @@ GET http://localhost:3000/api/medicos
 ###
 POST http://localhost:3000/api/medicos
 
+
 ###
-PUT http://localhost:3000/api/medicos/1
+PUT http://localhost:3000/api/medicos/11
+
+{
+    "name": "Agustin",
+    "apellido": "Rivera",
+    "especialidad": Cardiologia,
+    "telefono": "55667788"
+}
 
 ###
 DELETE http://localhost:3000/api/medicos/1
