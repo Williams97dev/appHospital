@@ -7,21 +7,21 @@ block content
             h3.title.is-3 Datos
         main
             form(action="/pacientes/create", method="POST")
-            .field
-                label.label Nombre
+                .field
+                    label.label Nombre
+                    .control
+                        input.input.is-rounded(type="text", name="nombre")
+                .field
+                    label.label Apellidos
+                    .control
+                        input.input.is-rounded(type="text", name="apellidos")
+                .field
+                    label.label Numero seguridad social
+                    .control
+                        input.input.is-rounded(type="text", name="num_seg_social")
+                .field
+                    label.label Telefono
+                    .control
+                        input.input.is-rounded(type="text", name="telefono")
                 .control
-                    input.input.is-rounded(type="text", name="name")
-            .field
-                label.label Apellidos
-                .control
-                    input.input.is-rounded(type="text", name="apellidos")
-            .field
-                label.label Numero seguridad social
-                .control
-                    input.input.is-rounded(type="text", name="num_seg_social")
-            .field
-                label.label Telefono
-                .control
-                    input.input.is-rounded(type="text", name="telefono",)
-            .control
-            button.button.is-dark.is-fullwidth.is-rounded Crear
+                button.button.is-dark.is-fullwidth.is-rounded Crear

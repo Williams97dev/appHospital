@@ -8,6 +8,7 @@ router.get('/new', (req, res)=>{
 
 router.post('/create',async (req, res)=>{
     try{
+        req.body.fecha_registro = new Date();
         await create(req.body);
         res.redirect('/pacientes');
     }catch(error){
