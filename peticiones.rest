@@ -24,10 +24,17 @@ DELETE http://localhost:3000/api/pacientes/idPaciente
 ### 
 PUT http://localhost:3000/api/pacientes/idPaciente/habitacion/idHabitacion
 
-# MEDICOS
+
+
+# Listado de MEDICOS
 
 ###
 GET http://localhost:3000/api/medicos
+
+# Medico por ID 
+
+###
+GET http://localhost:3000/api/medicos/5
 
 ###
 POST http://localhost:3000/api/medicos
@@ -39,7 +46,6 @@ Content-Type: application/json
     "especialidad": "Cardiologia",
     "telefono": "55667788"
 }
-
 
 ###
 PUT http://localhost:3000/api/medicos/11

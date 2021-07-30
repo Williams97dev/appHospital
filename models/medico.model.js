@@ -13,6 +13,20 @@ const create = ({ nombre, apellidos, especialidad, telefono }) => {
     );
 };
 
+const getById = (medicoId) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            'select * from medicos where id = ?',
+            [medicoId],
+            (err, result) => {
+                if (err) return reject(err);
+                if (result.length !== 1) return resolve(null);
+                resolve(result[0]);
+            }
+        );
+    });
+};
+
 module.exports = {
-    getAll, create
+    getAll, create, getById
 };

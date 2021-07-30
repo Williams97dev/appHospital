@@ -31,6 +31,8 @@ function createToken(user){
     return jwt.sign(payload, process.env.SECRET_KEY);
 };
 
+
+
 module.exports = {
     executeQuery,
     executeQueryUnique,
