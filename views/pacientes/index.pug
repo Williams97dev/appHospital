@@ -1,0 +1,22 @@
+extends ../layout.pug
+block content
+   h3.title.is-3 Listado de pacientes (#{pacientes.length})
+
+   table.table.is-fullwidth.is-striped
+      thead
+         tr
+            th Nombre 
+            th Apellidos 
+            th Número Seguridad Social 
+            th Teléfono
+            th Fecha de registro 
+            th Habitación
+      tbody
+         each paciente in pacientes
+            tr 
+               td= paciente.nombre
+               td= paciente.apellidos
+               td= paciente.num_seg_social
+               td= paciente.telefono
+               td= paciente.fecha_registro
+               td= paciente.habitacion
