@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: whitesmoke;
 }
 
 a {
@@ -8,9 +9,9 @@ a {
 }
 
 .container-medicos h1 {
-  margin-top: 2rem;
+  padding-top: 2rem;
   text-align: center;
 }
 
-.container-medicos table:hover {
+.container-medicos table {
 }
