@@ -13,18 +13,6 @@ const create = ({ nombre, apellidos, num_seg_social, telefono, fecha_registro })
         [nombre, apellidos, num_seg_social, telefono, fecha_registro])
 };
 
-// const update = (id, { nombre, apellidos, num_seg_social, telefono, fecha_registro }) => {
-//     return new Promise((resolve, reject) => {
-//         db.query(
-//             'update pacientes set nombre = ?, num_seg_social = ?, telefono = ?, fecha_registro = ? where id = ?',
-//             [nombre, apellidos, num_seg_social, telefono, fecha_registro, id],
-//             (err, result) => {
-//                 if (err) return reject(err);
-//                 resolve(result);
-//             }
-//         );
-//     });
-// }
 
 const update = (id, { nombre, apellidos, num_seg_social, telefono, fecha_registro }) => {
   return new Promise((resolve, reject) => {
