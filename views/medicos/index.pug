@@ -2,7 +2,7 @@ extends ../layout.pug
 
 block content
   .container.container-medicos
-    h1.title Lista de Médicos
+    h1.title.is-2 Lista de Médicos
 
     table.table.is-fullwidth.is-hoverable.is-bordered
       thead
@@ -10,7 +10,7 @@ block content
           th Nombre del medico
           th Apellidos 
           th Especialidad 
-          th Telefono 
+          th Teléfono 
       tbody
         each medico in medicos 
           tr 
