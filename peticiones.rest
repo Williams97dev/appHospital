@@ -2,6 +2,8 @@
 
 ###
 GET http://localhost:3000/api/pacientes
+###
+GET http://localhost:3000/api/pacientes/5
 
 ###
 POST http://localhost:3000/api/pacientes
@@ -19,7 +21,7 @@ Content-Type: application/json
 PUT http://localhost:3000/api/pacientes/5
 
 ###
-DELETE http://localhost:3000/api/pacientes/idPaciente
+DELETE http://localhost:3000/api/pacientes/45
 
 ### 
 PUT http://localhost:3000/api/pacientes/idPaciente/habitacion/idHabitacion
