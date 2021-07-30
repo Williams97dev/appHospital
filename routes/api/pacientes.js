@@ -1,5 +1,9 @@
 const express = require('express');
+<<<<<<< HEAD
 const { getAll, create, getById, remove } = require('../../models/paciente.model');
+=======
+const { getAll, create, update, getById, getByNumSegSocial } = require('../../models/paciente.model');
+>>>>>>> actualizacion_numSegSocial_pacientes
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -12,6 +16,21 @@ router.get('/', async (req, res) => {
 	}
 });
 
+router.get('/numSegSocial/:num_seg_social', async (req, res) => {
+	try {
+		const result = await getByNumSegSocial(req.params.num_seg_social);
+		if (result) {
+			res.json(result);
+		} else {
+			res.json({ error: 'El paciente no existe en la base de datos' });
+		}
+	} catch (error) {
+		  res.json({ error: error.message });
+	}
+
+})
+
+
 router.post('/', async (req, res) => {
 	try {
 		const result = await create(req.body);
@@ -21,8 +40,23 @@ router.post('/', async (req, res) => {
 	}
 });
 
-router.put('/:idPaciente', (req, res) => {
-	res.send('put api pacientes');
+/*
+BLOQUE 1 - Rosa
+--------
+- Actualización de pacientes
+- Recuperación de paciente por numSegSocial
+
+*/
+
+router.put('/:idPaciente', async (req, res) => {
+	  const idPaciente = req.params.idPaciente;
+	try {
+    const result = await update(idPaciente, req.body);
+    const paciente = await getById(idPaciente);
+		res.json(paciente);
+	} catch (error) {
+		res.json({ error: error.message });
+	}
 });
 
 router.delete('/:pacientestId', async (req, res) => {

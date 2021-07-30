@@ -1,4 +1,4 @@
-const { executeQuery } = require("../helpers")
+const { executeQuery, executeQueryUnique } = require("../helpers")
 
 const getAll = () => {
     return executeQuery(
@@ -33,6 +33,30 @@ const getById = (idPaciente) => {
 
 
 
+
+const update = (id, { nombre, apellidos, num_seg_social, telefono, fecha_registro }) => {
+  return new Promise((resolve, reject) => {
+    db.query(
+      'update pacientes set nombre = ?, apellidos = ?, num_seg_social = ?, telefono = ?, fecha_registro = ? where id = ?',
+      [nombre, apellidos, num_seg_social, telefono, fecha_registro, id],
+        (err, result) => {
+          if (err) return reject(err)
+          resolve(result)
+      }
+    )
+  })
+}
+
+
+
+
+const getByNumSegSocial = (num_seg_social) => {
+    return executeQueryUnique(
+        'select * from pacientes where num_seg_social = ?',
+        [num_seg_social]
+    );
+};
+
 module.exports = {
-    getAll, create, remove, getById
+    getAll, create, update, getById, getByNumSegSocial, remove
 };
