@@ -6,26 +6,12 @@ const getAll = () => {
     );
 };
 
-const create = ({ name, email, address, phone }) => {
+const create = ({ nombre, apellidos, especialidad, telefono }) => {
     return executeQuery(
-        'insert into clients (name, apellido, especialidad, telefono) values (?, ?, ?, ?)',
-        [nombre, apellido, especialidad, telefono]
+        'insert into medicos (nombre, apellidos, especialidad, telefono) values (?, ?, ?, ?)',
+        [nombre, apellidos, especialidad, telefono]
     );
 };
-
-// const getBypacienteId = (userId) => {
-//     return executeQuery (
-//         'select * from clients where user_id = ?',
-//         [userId]
-//     );
-// }
-
-// const getBymedicoId = (userId) => {
-//     return executeQuery (
-//         'select * from clients where user_id = ?',
-//         [userId]
-//     );
-// }
 
 module.exports = {
     getAll, create

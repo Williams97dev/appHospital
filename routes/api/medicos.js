@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAll } = require('../../models/medico.model');
+const { getAll, create } = require('../../models/medico.model');
 
 router.get('/', async (req, res) => {
 	try{
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.put('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const result = await create(req.body);
         res.json(result);
@@ -20,17 +20,6 @@ router.put('/', async (req, res) => {
         res.json({ error: error.message });
     }
 });
-
-
-
-
-// router.put('/:idMedico', (req, res) => {
-//     res.send('put api medicos');
-// });
-
-// router.delete('/:idMedico', (req, res) => {
-//     res.send('delete api medicos');
-// });
 
 
 module.exports = router;
