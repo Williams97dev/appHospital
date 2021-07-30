@@ -79,3 +79,5 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/api/medicos/65
 
+###
+GET http://localhost:3000/api/pacientes/55/habitacion/5

@@ -1,6 +1,7 @@
 const express = require('express');
 
-const { getAll, create, update, getById, getByNumSegSocial, remove } = require('../../models/paciente.model');
+const { getAll, create, update, getById, getByNumSegSocial, remove, getByHabitacion, updateHabitacion } = require('../../models/paciente.model');
+const { getById: habGetById } = require('../../models/habitacion.model');
 
 const router = express.Router();
 
@@ -27,6 +28,21 @@ router.get('/numSegSocial/:num_seg_social', async (req, res) => {
 	}
 
 })
+
+router.get('/:pacienteId/habitacion/:habitacionId', async (req, res) => {
+	const pacienteId = req.params.pacienteId;
+	const habitacionId = req.params.habitacionId;
+
+	const habitacion = await habGetById(habitacionId);
+	const resultNum = await getByHabitacion(habitacionId);
+
+	if (habitacion.num_pacientes > resultNum.numPacientes) {
+		const resultUpdate = await updateHabitacion(pacienteId, habitacionId);
+		res.json(resultUpdate);
+	} else {
+		res.json({ error: 'No se pueden asignar más pacientes' });
+	}
+});
 
 
 router.post('/', async (req, res) => {
