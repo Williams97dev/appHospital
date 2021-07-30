@@ -1,6 +1,5 @@
-const { json } = require('express');
 const express = require('express');
-const { getAll } = require('../../models/paciente.model');
+const { getAll, create } = require('../../models/paciente.model');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -13,8 +12,13 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.post('/', (req, res) => {
-	res.send(' post api pacientes');
+router.post('/', async (req, res) => {
+	try {
+		const result = await create(req.body);
+		res.json(result);
+	} catch (error) {
+		res.json({ error: error.message });
+	}
 });
 
 router.put('/:idPaciente', (req, res) => {

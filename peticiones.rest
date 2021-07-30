@@ -5,6 +5,15 @@ GET http://localhost:3000/api/pacientes
 
 ###
 POST http://localhost:3000/api/pacientes
+Content-Type: application/json
+
+{
+  "nombre": "Alfredo",
+  "apellidos": "Aparicio Navarro",
+  "num_seg_social": "458424242",
+  "telefono": "969484254",
+  "fecha_registro": "2021-07-30"
+}
 
 ###
 PUT http://localhost:3000/api/pacientes/1
