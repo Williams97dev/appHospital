@@ -2,7 +2,7 @@ const { executeQuery } = require("../helpers")
 
 const getAll = () => {
     return executeQuery(
-        'SELECT * FROM pacientes'
+        'SELECT * FROM medicos'
     );
 };
 

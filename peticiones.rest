@@ -7,7 +7,7 @@ GET http://localhost:3000/api/pacientes
 POST http://localhost:3000/api/pacientes
 
 ###
-PUT http://localhost:3000/api/pacientes/1
+PUT http://localhost:3000/api/pacientes/5
 
 ###
 DELETE http://localhost:3000/api/pacientes/idPaciente
