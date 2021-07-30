@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAll, create, getById, remove } = require('../../models/medico.model');
+const { getAll, create, getById, remove, update } = require('../../models/medico.model');
 
 router.get('/', async (req, res) => {
 	try{
@@ -47,7 +47,10 @@ router.delete('/:medicoId', async (req, res) => {
         res.json({ error: error.message });
     }
 });
-
+router.put('/:medicoId', async (req, res) => {
+    const resultado = await update(req.params.medicoId, req.body);
+    return res.json(resultado);
+})
 
 
 

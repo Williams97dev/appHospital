@@ -39,7 +39,12 @@ const remove = (medicoId) => {
         );
     });
 }
-
+const update = (medicoId, {nombre, apellidos, especialidad, telefono}) => {
+    return executeQuery(
+        'update medicos set nombre=?, apellidos=?, especialidad=?, telefono=? where id = ?',
+        [nombre, apellidos, especialidad, telefono, medicoId],
+    )
+}
 module.exports = {
-    getAll, create, getById, remove
+    getAll, create, getById, remove, update
 };

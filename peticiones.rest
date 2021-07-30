@@ -50,9 +50,19 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/medicos/11
+PUT http://localhost:3000/api/medicos/45
+Content-Type: application/json
+
+{
+    "nombre": "Juana",
+    "apellidos": "Esteban",
+    "especialidad": "Neurofisiologo",
+    "telefono": "789654123"
+  }
+
 
 
 
 ###
 DELETE http://localhost:3000/api/medicos/65
+
