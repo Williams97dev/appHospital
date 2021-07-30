@@ -4,6 +4,10 @@
 GET http://localhost:3000/api/pacientes
 
 ###
+GET http://localhost:3000/api/pacientes/numSegSocial/998443009
+
+
+###
 POST http://localhost:3000/api/pacientes
 Content-Type: application/json
 
@@ -16,7 +20,16 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/pacientes/5
+PUT http://localhost:3000/api/pacientes/55
+Content-Type: application/json
+
+{
+  "nombre": "Adolfo",
+  "apellidos": "Aparicio Navarro",
+  "num_seg_social": "458424242",
+  "telefono": "9694845854",
+  "fecha_registro": "2021-07-30"
+}
 
 ###
 DELETE http://localhost:3000/api/pacientes/idPaciente
@@ -39,11 +52,6 @@ Content-Type: application/json
     "especialidad": "Cardiologia",
     "telefono": "55667788"
 }
-
-
-###
-PUT http://localhost:3000/api/medicos/11
-
 
 
 ###
