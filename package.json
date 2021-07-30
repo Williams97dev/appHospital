@@ -7,6 +7,7 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "bulma": "^0.9.3",
     "cookie-parser": "~1.4.4",
     "dayjs": "^1.10.6",
     "debug": "~2.6.9",
