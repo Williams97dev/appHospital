@@ -27,6 +27,19 @@ const getById = (medicoId) => {
     });
 };
 
+const remove = (medicoId) => {
+    return new Promise((resolve, reject) => {
+        db.query(
+            'delete from medicos where id = ?',
+            [medicoId],
+            (err, result) => {
+                if (err) return reject(err);
+                resolve(result);
+            }
+        );
+    });
+}
+
 module.exports = {
-    getAll, create, getById
+    getAll, create, getById, remove
 };

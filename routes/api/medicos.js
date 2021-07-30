@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAll, create, getById } = require('../../models/medico.model');
+const { getAll, create, getById, remove } = require('../../models/medico.model');
 
 router.get('/', async (req, res) => {
 	try{
@@ -34,15 +34,15 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:medicotId', async (req, res) => {
-    const medicoId = req.params.medicotId;
+router.delete('/:medicoId', async (req, res) => {
+    const medicoId = req.params.medicoId;
     try {
-        const medico = await getById(productId);
-        if (!product) {
-            return res.json({ error: 'El medico no esta disponible' });
+        const medico = await getById(medicoId);
+        if (!medico) {
+            return res.json({ error: 'El medico solicitado no existe' });
         }
         const result = await remove(medicoId);
-        res.json({ sucess: 'El medico se eliminocorrectamente' });
+        res.json({ sucess: 'El medico se elimino correctamente' });
     } catch (error) {
         res.json({ error: error.message });
     }
